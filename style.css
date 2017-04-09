@@ -1,0 +1,173 @@
+body {
+
+  font-family: 'Philosopher', sans-serif;
+  margin: 0;
+
+
+}
+
+h1 {
+	color: pink;
+	font-size: 55px;
+	margin-bottom: 0;
+}
+
+h2 {
+	color: white;
+	font-size: 18px;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+h3 {
+	color: white;
+	font-size: 32px;
+	margin-top: 4px;
+	margin-bottom: 4px;
+}
+
+h4 {
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	margin-top: 100px;
+}
+
+h5 {
+	text-align: center;
+	font-size: 24px;
+	font-weight: bold;
+
+}
+
+p {
+	text-align: center;
+	font-size: 18px;
+}
+
+
+.nav-link {
+	color: WHITE;
+	text-decoration: none;
+}
+
+li {
+	display: inline-block;
+	font-size: 14px;
+	width: 110px;
+	font-weight: bold;
+	margin-top: 30px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	text-align: center;
+	margin-left: 15px;
+}
+
+.hire-me {
+	border-style: solid;
+	border-color: white;
+
+}
+
+.bio {
+	color: white;
+	height: 14px;
+}
+
+.me {
+	height: 150px;
+	border-radius: 100%;
+	border-style: solid;
+	border-color: white;
+
+}
+
+.about {
+	width: 400px;
+	padding: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.pink {
+	width: 50px;
+	height: 3px;
+	background-color: pink;
+	border-style: none;
+}
+
+.about-container {
+	background: url(bg.jpg) no-repeat center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  height: 600px;
+}
+
+.blue {
+	width: 50px;
+	height: 3px;
+	background-color: #B5D9FF;
+	border-style: none;
+
+}
+
+.box {
+	float: left;
+	width: 42.5%;
+	margin-left: 5%;
+	margin-top: 80px;
+}
+
+.clear {
+	clear: both;
+}
+
+.full-width {
+	width: 100%;
+	border-style: dashed;
+	border-color: #B5D9FF;
+}
+
+.skills-and-tools {
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.icons {
+	text-align: center;
+}
+
+.icon {
+	margin: 30px 0;
+}
+
+.icon_github {
+	max-width: 120px;
+	padding-bottom: 30px;
+}
+
+.contact-me {
+	height:350px;
+	background-color: #202020;
+	padding-top: 30px;
+}
+
+.contact-headline {
+	color: white;
+}
+
+.contact-info {
+	color: white;
+	font-size: 14px;
+	margin-top: 30px;
+}
+
+.contact-link {
+	color:white;
+	font-weight: bold;
+	font-size: 13px;
+}
+
