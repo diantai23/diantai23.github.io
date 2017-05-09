@@ -98,7 +98,7 @@ li {
 }
 
 .about-container {
-	background: url(bg.jpg) no-repeat center center fixed; 
+	background: url(bg.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -127,8 +127,7 @@ li {
 
 .full-width {
 	width: 100%;
-	border-style: dashed;
-	border-color: #B5D9FF;
+  box-shadow: 3px 3px 3px #888888;
 }
 
 .skills-and-tools {
@@ -170,4 +169,3 @@ li {
 	font-weight: bold;
 	font-size: 13px;
 }
-

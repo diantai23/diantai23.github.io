@@ -34,7 +34,7 @@
 	</ul>
 
 		<div class="about">
-		
+
 			<img src="me.jpg" class="me" />
 
 			<h1>Dian Tai</h1>
@@ -45,7 +45,7 @@
 
 			<hr class="pink" />
 			<p class="bio">
-				Hi my name is Dian I am an awkward asian queer (AAQ), I do aaqward things all the time. I am excited to delve into the world of programming and hope to make this a career!
+				Dian is an awkward asian queer (AAQ) who does aaqward things all the time. They are excited to delve into the world of programming and hope to make this a career!
 
 			</p>
 		</div>
@@ -56,7 +56,7 @@
 
 	<hr class="blue">
 
-	
+
 	<div class="box">
 		<h5> Temperature Conversion</h5>
 
@@ -93,17 +93,17 @@ puts &quot;Enter a number: &quot;
 answer = gets.to_i
 
 def ordinal(number)
-  
+
   ending_digit =  number % 10
   ending_two_digits = number % 100
-  
+
   if ending_digit == 1 &amp;&amp; ending_two_digits != 11
-    return &quot;that's the #{number}st item!&quot;   
+    return &quot;that's the #{number}st item!&quot;
   elsif ending_digit == 2 &amp;&amp; ending_two_digits != 12
     return &quot;that's the #{number}nd item!&quot;
   elsif ending_digit == 3 &amp;&amp; ending_two_digits != 13
     return &quot;that's the #{number}rd item!&quot;
-  else 
+  else
     return &quot;that's the #{number}th item!&quot;
 
   end
@@ -140,14 +140,14 @@ puts &quot;How many items do you want to see? &quot;
 user_number = gets.to_i
 
 def foobar(how_many_numbers)
-  
+
   how_many_numbers.times do |count|
-    
+
     count += 1
-    
+
     foo = count % 3 == 0
-    bar = count % 5 == 0 
-    
+    bar = count % 5 == 0
+
     if foo &amp;&amp; bar
       puts &quot;foobar&quot;
     elsif foo
@@ -156,7 +156,7 @@ def foobar(how_many_numbers)
       puts &quot;bar&quot;
     else
       puts count
-    end   
+    end
 
   end
 end
@@ -172,14 +172,18 @@ end
 
     <div class="box">
       <h5>Quote Generator</h5>
-      <img src="splurty.png" class="full-width" />
+			<a href="https://hangryhippos.herokuapp.com/">
+				<img src="splurty.png" class="full-width" />
+			</a>
      <p>
      	A database-powered quote generator with a mobile-first design, using the Ruby on Rails framework, HTML, and CSS. Uses Git and GitHub for version control, and launched on Heroku.
      </p>
     </div>
      <div class="box">
       <h5>Yelp Clone</h5>
-      <img src="nomster.png" class="full-width" />
+			<a href="http://nomster-dian-tai.herokuapp.com/">
+				<img src="nomster.png" class="full-width" />
+			</a>
       <p>
         A Yelp clone that integrates with the Google Maps API
         and includes features like user comments, star ratings,
@@ -271,16 +275,3 @@ end
 
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
