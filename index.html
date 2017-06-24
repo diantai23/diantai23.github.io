@@ -1,30 +1,22 @@
 <html>
 	<head>
-
-	<link rel="stylesheet" type="text/css" href="style.css">
-
-	<link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i" rel="stylesheet">
-
-	 <link
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link href="https://fonts.googleapis.com/css?family=Philosopher:400,400i,700,700i" rel="stylesheet">
+		<link
 	    rel="stylesheet"
 	    href="prism-atom-dark.css"
 	    type="text/css"
 	    media="screen"
 	  />
-
+		<link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 	  <script type="text/javascript" src="prism.js"></script>
 	  <script type="text/javascript" src="prism.ruby.js"></script>
-
 	  <title>Dian Tai</title>
 	  <meta name="description" content="Dian Tai is a software developer in training specializing in full-stack development. They have experience with Ruby, HTML, and CSS.">
-
 	</head>
 
-
 	<body>
-
 	<div class="about-container">
-
 	<ul>
 		<li><a href="#" class="nav-link">ABOUT</a></li>
  		<li><a href="#code-samples" class="nav-link">CODE SAMPLES</a></li>
@@ -32,54 +24,80 @@
  		<li><a href="#skills-and-tools" class="nav-link">SKILLS &amp; TOOLS</a></li>
  		<li class="hire-me"><a href="#hire-me" class="nav-link">HIRE ME</a></li>
 	</ul>
-
 		<div class="about">
-
 			<img src="me.jpg" class="me" />
-
 			<h1>Dian Tai</h1>
-
-			<h2>DOG ENTHUSIAST</h2>
-			<h3>&amp;</h3>
-			<h2>CERTIFIED QUEER PERSON</h2>
+			<br />
+			<h2>WEB DEVELOPER</h2>
 
 			<hr class="pink" />
 			<p class="bio">
-				Dian is an awkward asian queer (AAQ) who does aaqward things all the time. They are excited to delve into the world of programming and hope to make this a career!
-
+				Dian is an awkward asian queer (AAQ) who does aaqward things all the time. They enjoy beautiful and responsive website design.
 			</p>
 		</div>
 	</div>
 
-
-	<h4 id="code-samples">Code Snippets</h4>
-
+	<h4 id="code-samples">Code Samples</h4>
 	<hr class="blue">
-
-
 	<div class="box">
-		<h5> Temperature Conversion</h5>
-
+		<h5> Image Blur</h5>
 		<p>
-			This ruby program will prompt the user for a temperature in degrees Celsius and let the user know what the corresponding temperature is in Fahrenheit.
+			This ruby program will take a binary representation of a B&W image, take in a user-specified Manhattan distance, then blur the surrounding pixels within that radius.
 		</p>
-
 	</div>
-
-
 
 	<div class="box">
 	<pre><code class="language-ruby">
-def celsius_to_fahrenheit(temp_celsius)
-  return temp_celsius * 9.0 / 5.0 + 32.0
+class Image
+
+  def initialize(input_array)
+    @input_array = input_array
+  end
+
+  def output_image
+    @input_array.each do |row|
+      puts row.join
+    end
+  end
+
+  def blur(distance)
+    @copy_array = Marshal.load(Marshal.dump(@input_array))
+    @input_array.each_with_index do |row, row_index|
+      row.each_with_index do |pixel, pixel_index|
+        if pixel == 1
+          counter = 0
+			(distance+1).times do |vertical_index|
+            (distance+1).times do |horizontal_index|
+
+              # # Quadrant 1
+              if (pixel_index + horizontal_index - counter >= pixel_index) && (pixel_index + horizontal_index < @input_array[row_index].length) && (row_index - vertical_index >= 0)
+                @copy_array[row_index - vertical_index][pixel_index + horizontal_index - counter] = 1
+              end
+
+              # # Quadrant 2
+              if (pixel_index - horizontal_index + counter <= pixel_index) && (pixel_index - horizontal_index >= 0) && (row_index - vertical_index >= 0)
+                @copy_array[row_index - vertical_index][pixel_index - horizontal_index + counter] = 1
+              end
+
+              # # Quadrant 3
+              if (pixel_index + horizontal_index - counter >= pixel_index) && (pixel_index - horizontal_index >= 0) && (row_index + vertical_index < @input_array.length)
+                @copy_array[row_index + vertical_index][pixel_index - horizontal_index + counter] = 1
+              end
+
+              # # Quadrant 4
+              if (pixel_index + horizontal_index - counter >= pixel_index) && (pixel_index + horizontal_index < @input_array[row_index].length) && (row_index + vertical_index < @input_array.length)
+                @copy_array[row_index + vertical_index][pixel_index + horizontal_index - counter] = 1
+              end
+            end
+            counter += 1
+          end
+        end
+      end
+    end
+    return Image.new(@copy_array)
+  end
 end
-
-puts &quot;Enter degrees in Celsius: &quot;
-celsius = gets.chomp.to_f
-puts &quot;The temperature is #{celsius_to_fahrenheit(celsius)} degrees Fahrenheit&quot;
 	</code></pre>
-
-
 	</div>
 
 	<br class="clear" />
@@ -88,43 +106,65 @@ puts &quot;The temperature is #{celsius_to_fahrenheit(celsius)} degrees Fahrenhe
 
 	<div class="box">
  		<pre><code class="language-ruby">
-puts &quot;Enter a number: &quot;
+class Node
+  attr_accessor :value, :next_node
 
-answer = gets.to_i
-
-def ordinal(number)
-
-  ending_digit =  number % 10
-  ending_two_digits = number % 100
-
-  if ending_digit == 1 &amp;&amp; ending_two_digits != 11
-    return &quot;that's the #{number}st item!&quot;
-  elsif ending_digit == 2 &amp;&amp; ending_two_digits != 12
-    return &quot;that's the #{number}nd item!&quot;
-  elsif ending_digit == 3 &amp;&amp; ending_two_digits != 13
-    return &quot;that's the #{number}rd item!&quot;
-  else
-    return &quot;that's the #{number}th item!&quot;
-
+  def initialize(value, next_node=nil)
+    @value = value
+    @next_node = next_node
   end
 end
 
-puts ordinal(answer)
+def print_values(list_node)
+  if list_node
+    print "#{list_node.value} --> "
+    print_values(list_node.next_node)
+  else
+    print "nil\n"
+    return
+  end
+end
+
+class Stack
+  attr_reader :top
+
+  def initialize
+    @top = nil
+  end
+
+  def push(value)
+    @top = Node.new(value, @top)
+  end
+
+  def pop
+    return nil if @top.nil?
+    removed_item = @top.value
+    @top = @top.next_node
+    return removed_item
+  end
+end
+
+def reverse_list(list)
+  reversed_list = nil
+  while list
+    current_value = list.value
+    list = list.next_node
+    reversed_list = Node.new(current_value, reversed_list)
+  end
+  return reversed_list
+end
  		</code></pre>
     </div>
-
 	</div>
 
 	<div class="box">
-	 	<h5>Ordinal Challenge</h5>
+	 	<h5>Linked List Data Structure</h5>
 	 	<p>
-	 		This ruby program will convert a plain number to the ordinal of the number. For example, if the user enters 2, it will display 2nd, if the user enters 3, it will display 3rd, etc.
+	 		With the Linked List concept, a list of data is stored with each object pointing at the next object. This ruby program implements Node and Stack classes and allows for faster runtime than with array manipulation.
 	 	</p>
 	</div>
 
 	<br class="clear" />
-
-
 
 	<div class="box">
 	 	<h5>Foobar</h5>
@@ -171,7 +211,7 @@ end
 	<hr class="blue">
 
     <div class="box">
-      <h5>Quote Generator</h5>
+      <h5>Random Quote Generator</h5>
 			<a href="https://hangryhippos.herokuapp.com/">
 				<img src="splurty.png" class="full-width" />
 			</a>
@@ -193,8 +233,10 @@ end
     <br class="clear" />
 
     <div class="box">
-      <h5>Two-Sided Market Place</h5>
-      <img src="flixter.png" class="full-width" />
+      <h5>Two-Sided Marketplace</h5>
+			<a href="http://flixter-dian-tai.herokuapp.com/">
+	      <img src="flixter.png" class="full-width" />
+			</a>
       <p>
         A two-sided, video-streaming marketplace platform that
         features credit card payment capabilities, user role
@@ -203,8 +245,10 @@ end
       </p>
     </div>
     <div class="box">
-      <h5>Test Driven Development</h5>
-      <img src="grammable.png" class="full-width" />
+      <h5>Test-Driven Development</h5>
+			<a href="http://pupworthy.herokuapp.com/">
+	      <img src="grammable.png" class="full-width" />
+			</a>
       <p>
         An Instagram clone that was built using industry-standard, test-driven
         development following numerous red/green/refactor cycles.
@@ -248,7 +292,7 @@ end
 	    <img src="codeship.png" class="icon"/>
 
 	    <br class="clear" />
-	    <img src="skills.png" class="icon"" />
+	    <img src="skills.png" class="icon" />
 	</div>
 
 
@@ -260,18 +304,15 @@ end
 		<hr class="blue" />
 
 		<p class="contact-info">
-        	Currently entertaining new opportunities.
-        	Please get in touch via email:
-      	</p>
+    	Currently entertaining new opportunities.
+    	Please get in touch via email:
+  	</p>
 
-	    <p>
-		    <a href="mailto:diantai@gmail.com" class="contact-link">
-          diantai@gmail.com
-	        </a>
-	      </p>
-
-    </div>
-
-
+    <p>
+	    <a href="mailto:diantai@gmail.com" class="contact-link">
+        diantai@gmail.com
+      </a>
+    </p>
+  </div>
 </body>
 </html>
