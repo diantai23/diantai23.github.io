@@ -1,9 +1,9 @@
 html,body {
   margin: 0px;
   padding: 0px;
-}
-
-body {
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
   font-family: 'Josefin Sans';
   font-weight: 300;
 }
@@ -52,8 +52,7 @@ li {
 .about {
 	width: 400px;
 	padding: 70px;
-	margin-left: auto;
-	margin-right: auto;
+	margin: 0 auto;
 	text-align: center;
 }
 
@@ -79,6 +78,7 @@ li {
     height: auto;
     /* offset-x | offset-y | blur-radius | spread-radius | color */
     box-shadow: 0px -20px 70px 30px #282C34;
+
 
 }
 
@@ -111,13 +111,8 @@ h4 {
   border-color: white;*/
 }
 
-.code-samples {
-  padding-top: 100px;
-}
-
 .section-title {
   padding-top: 100px;
-
 }
 
 .zigzag-purple {
@@ -143,13 +138,12 @@ p {
   margin: 0 auto;
   color: white;
   width: 400px;
-  margin-top: 20px;
 }
 
 .snippet-with-text {
   color: black;
   height: 550px;
-  margin-top: 15px;
+  margin-top: 10px;
 }
 
 .snippet {
@@ -166,53 +160,23 @@ p {
   width: 380px;
 }
 
-
-
 .snippet-with-text .snippet-text {
   display: none;
-
 }
 
 .snippet-with-text:hover .snippet-text {
   display: block;
   background-color: white;
   width: 400px;
-
-
-}
-
-.box {
-	float: left;
-	width: 42.5%;
-	margin-left: 5%;
-	margin-top: 80px;
-}
-
-.box p {
-  color: white;
-  width: 400px;
-  display: block;
-  margin: 30 auto;
 }
 
 .clear {
 	clear: both;
 }
 
-.full-width {
-	width: 100%;
-  box-shadow: 3px 3px 3px #888888;
-}
-
 #skills-and-tools {
-  max-width: 400px;
-  margin: 40px auto;
+  margin: 0px auto;
   color: black;
-}
-
-.skills-and-tools {
-  max-width: 400px;
-  margin: 40px auto;
 }
 
 .icons {
@@ -227,25 +191,35 @@ p {
 	max-width: 120px;
 }
 
-
-.contact-me {
-	height:300px;
+.contact-me-section {
+	height: 350px;
 	background-color: #202020;
-	padding-top: 30px;
+	padding-top: 35px;
+  margin-top: 75px;
 }
 
-.contact-headline {
+.contact-blurb {
 	color: white;
-}
-
-.contact-info {
-	color: white;
-	font-size: 14px;
+	font-size: 15px;
 	margin-top: 30px;
 }
 
-.contact-link {
-	color:white;
+.contact-email {
+	color: white;
 	font-weight: bold;
-	font-size: 13px;
+	font-size: 15px;
+}
+
+.contact-email:hover {
+  color: white;
+}
+
+.social-media {
+  margin: 0 auto;
+	text-align: center;
+}
+
+.social-button {
+  color: white;
+  margin: 4px;
 }
