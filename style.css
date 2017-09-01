@@ -1,100 +1,11 @@
+html,body {
+  margin: 0px;
+  padding: 0px;
+}
+
 body {
-
-  font-family: 'Philosopher', sans-serif;
-  margin: 0;
-
-
-}
-
-h1 {
-	color: pink;
-	font-size: 55px;
-	margin-bottom: 0;
-}
-
-h2 {
-	color: white;
-	font-size: 18px;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
-h3 {
-	color: white;
-	font-size: 32px;
-	margin-top: 4px;
-	margin-bottom: 4px;
-}
-
-h4 {
-	text-align: center;
-	font-size: 30px;
-	font-weight: bold;
-	margin-top: 100px;
-}
-
-h5 {
-	text-align: center;
-	font-size: 24px;
-	font-weight: bold;
-
-}
-
-p {
-	text-align: center;
-	font-size: 18px;
-}
-
-
-.nav-link {
-	color: WHITE;
-	text-decoration: none;
-}
-
-li {
-	display: inline-block;
-	font-size: 14px;
-	width: 110px;
-	font-weight: bold;
-	margin-top: 30px;
-	padding-top: 8px;
-	padding-bottom: 8px;
-	text-align: center;
-	margin-left: 15px;
-}
-
-.hire-me {
-	border-style: solid;
-	border-color: white;
-
-}
-
-.bio {
-	color: white;
-	height: 14px;
-}
-
-.me {
-	height: 150px;
-	border-radius: 100%;
-	border-style: solid;
-	border-color: white;
-
-}
-
-.about {
-	width: 400px;
-	padding: 40px;
-	margin-left: auto;
-	margin-right: auto;
-	text-align: center;
-}
-
-.pink {
-	width: 50px;
-	height: 3px;
-	background-color: pink;
-	border-style: none;
+  font-family: 'Josefin Sans';
+  font-weight: 300;
 }
 
 .about-container {
@@ -103,14 +14,170 @@ li {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
-  height: 600px;
+  height: 670px;
 }
 
-.blue {
-	width: 50px;
-	height: 3px;
-	background-color: #B5D9FF;
-	border-style: none;
+.navbar {
+  box-shadow: 0px 0px 70px 15px #343A40;
+  padding-bottom: 0;
+}
+
+.navbar-brand {
+  padding: 5px;
+  border: solid #c1c1c1 1px;
+}
+
+li {
+	display: inline-block;
+	font-size: 14px;
+	width: 150px;
+	font-weight: bold;
+	margin-top: 0px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-align: center;
+	margin-left: 15px;
+}
+
+.nav-link {
+	color: WHITE;
+	text-decoration: none;
+  font-weight: 400;
+}
+
+.hire-me {
+  border: solid 2px white;
+}
+
+.about {
+	width: 400px;
+	padding: 70px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
+.me {
+	height: 150px;
+	border-radius: 100%;
+	border-style: solid;
+	border-color: white;
+}
+
+.bio {
+	color: white;
+	height: 14px;
+  margin: 0px;
+}
+
+#bg-grad {
+    background: #949dad; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#282C34, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#282C34, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#282C34, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#282C34, white 80%); /* Standard syntax */
+    height: auto;
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0px -20px 70px 30px #282C34;
+
+}
+
+h1 {
+	color: pink;
+	font-size: 65px;
+  font-weight: 400;
+	margin: 30px 0px 0px;
+}
+
+h2 {
+	color: white;
+	font-size: 18px;
+  font-weight: 400;
+}
+
+.zigzag-pink {
+  width: 100px;
+  display: block;
+  margin: 20px auto 30px;
+}
+
+h4 {
+	text-align: center;
+	font-size: 30px;
+  margin-top:  0px;
+  color: white;
+  font-weight: 400;
+  /*border-style: solid;
+  border-color: white;*/
+}
+
+.code-samples {
+  padding-top: 100px;
+}
+
+.section-title {
+  padding-top: 100px;
+
+}
+
+.zigzag-purple {
+  width: 100px;
+  display: block;
+  margin: 20px auto 80px;
+}
+
+h5 {
+	text-align: center;
+	font-size: 24px;
+	font-weight: 400;;
+}
+
+p {
+	text-align: center;
+	font-size: 18px;
+  font-weight: 300;
+}
+
+.snippet-container {
+  display: block;
+  margin: 0 auto;
+  color: white;
+  width: 400px;
+  margin-top: 20px;
+}
+
+.snippet-with-text {
+  color: black;
+  height: 550px;
+  margin-top: 15px;
+}
+
+.snippet {
+  width: 400px;
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+  border: 5px solid white;
+}
+
+.snippet-text {
+  display: block;
+  margin: 0 auto;
+  width: 380px;
+}
+
+
+
+.snippet-with-text .snippet-text {
+  display: none;
+
+}
+
+.snippet-with-text:hover .snippet-text {
+  display: block;
+  background-color: white;
+  width: 400px;
+
 
 }
 
@@ -121,6 +188,13 @@ li {
 	margin-top: 80px;
 }
 
+.box p {
+  color: white;
+  width: 400px;
+  display: block;
+  margin: 30 auto;
+}
+
 .clear {
 	clear: both;
 }
@@ -128,6 +202,12 @@ li {
 .full-width {
 	width: 100%;
   box-shadow: 3px 3px 3px #888888;
+}
+
+#skills-and-tools {
+  max-width: 400px;
+  margin: 40px auto;
+  color: black;
 }
 
 .skills-and-tools {
@@ -140,16 +220,16 @@ li {
 }
 
 .icon {
-	margin: 30px 0;
+	margin: 30px 0px;
 }
 
 .icon_github {
 	max-width: 120px;
-	padding-bottom: 30px;
 }
 
+
 .contact-me {
-	height:350px;
+	height:300px;
 	background-color: #202020;
 	padding-top: 30px;
 }
