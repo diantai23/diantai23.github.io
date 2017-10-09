@@ -191,6 +191,11 @@ p {
 	max-width: 120px;
 }
 
+.icon_mailchimp {
+  max-width: 220px;
+  padding-top: 5px;
+}
+
 .contact-me-section {
 	height: 350px;
 	background-color: #202020;
